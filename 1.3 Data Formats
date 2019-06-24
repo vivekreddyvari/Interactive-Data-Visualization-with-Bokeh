@@ -1,0 +1,60 @@
+1.3 Data Formats
+
+# What kinds of data Formats
+# From the previous example 03 of 1.2 Chapter
+
+# Numpy Arrays
+# Exercise 01
+
+from bokeh.io import output_file, show
+from bokeh.plotting import figure
+import numpy as np
+x = np.linspace(0, 10, 1000) # even spaces from 10 to 1000
+y = np.sin(x) + np.random.random(1000) * 0.2
+
+plot = figure()
+plot.line(x,y)
+
+output_file('numpy.html')
+show(plot)
+
+# Pandas
+# dataframe set, tabular series
+
+from bokeh.io import output_file, show
+from bokeh.plotting import figure
+import pandas as pd
+from bokeh.sampledata.iris import flowers
+
+plot=figure()
+plot=circle(flowers['petal_length'], flowers['sepal_length'], size=10)
+
+output_file('pandas.html')
+show(plot)
+
+# Column data source related Bokeh
+- Common fundamental data structure for bokeh
+- Map string columns names to sequence of data
+- Often created automatically for you
+- can be shared between glyphs to link selections
+- Extra columns can be used with hover tooltips
+
+# Column data source (in detail)
+
+#Example 03
+from bokeh.models import ColumnDataSource
+source = ColumnDataSource(data = 
+		{'x' : [1,2,3,4,5], 'y':[8,3,2,5,6]})
+source.data
+
+# Example 04
+from bokeh.models import ColumnDataSource
+from bokeh.sampledata.iris import flowers as df
+
+df.head()
+
+source = ColumnDataSource(df)
+
+
+ 
+ 
