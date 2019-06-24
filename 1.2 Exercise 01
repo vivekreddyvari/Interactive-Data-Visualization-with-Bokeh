@@ -1,0 +1,29 @@
+Plotting data from NumPy arrays
+In the previous exercises, you made plots using data stored in lists. You learned that Bokeh can plot both numbers and datetime objects.
+
+In this exercise, you'll generate NumPy arrays using np.linspace() and np.cos() and plot them using the circle glyph.
+
+np.linspace() is a function that returns an array of evenly spaced numbers over a specified interval. For example, np.linspace(0, 10, 5) returns an array of 5 evenly spaced samples calculated over the interval [0, 10]. np.cos(x) calculates the element-wise cosine of some array x.
+
+For more information on NumPy functions, you can refer to the NumPy User Guide and NumPy Reference.
+
+The figure p has been provided for you.
+
+# Import pandas as pd
+import pandas as pd
+
+# Read in the CSV file: df
+df = pd.read_csv('auto.csv')
+
+# Import figure from bokeh.plotting
+from bokeh.plotting import figure
+
+# Create the figure: p
+p = figure(x_axis_label='HP', y_axis_label='MPG')
+
+# Plot mpg vs hp by color
+p.circle(df['hp'], df['mpg'], color=df['color'], size=10)
+
+# Specify the name of the output file and show the result
+output_file('auto-df.html')
+show(p)
