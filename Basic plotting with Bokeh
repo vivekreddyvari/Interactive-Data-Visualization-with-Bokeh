@@ -1,1 +1,52 @@
 
+16:25 24-6-2019
+
+Plotting with Glyphs
+ - What is glyph?
+	- visual shapes that can be drawn on screen, like (circle, rectangles, size array, transparency, alpha)
+
+#interfacing
+ - 
+
+# imports
+from bokeh.io import output_file, show
+from bokeh.plotting import figure
+
+# call the figure functions with arguments 
+plot= figure(plot_width=400, tools='pan, box_zoom')
+
+# arg:plot_with - describes the pixels
+# arg:tools - specifies which pan to draw rectangle or square with zoom, 
+plot.circle([1,2,3,4,5],[8,2,5,4,7])
+
+# we call the out-put file to show the results and then we use show to plot
+output_file('circle.html')
+show(plot)
+
+# what kind of values can be attached to glyph properties
+ list
+ arrays
+ tuples
+ single fixed value
+
+# example 01
+
+plot= figure()
+plot.circle(x=10, y=[2,5,6,7], size=[10,20,30,40])
+
+# Markers
+asterisk()
+circle()
+circle_cross()
+circle_x()
+diamond()
+diamond_cross()
+inverted_traingle()
+square()
+square_cross()
+square_x()
+triangle()
+x()
+
+
+
