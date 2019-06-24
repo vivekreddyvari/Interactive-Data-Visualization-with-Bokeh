@@ -1,1 +1,71 @@
 
+1,1 Additional Glyphs
+
+# Lines
+	 - Lines 
+# Example 01
+
+from bokeh.io import output_file, show
+from bokeh.plotting import figure
+
+x = [1,2,3,4,5]
+y = [8,6,5,2,3]
+
+plot = figure()
+plot.line(x,y, line_width=3)
+
+output_file('line.html')
+show(plot)
+
+# Line and Markers together, simply called glyph-method
+
+# Example 02
+
+from bokeh.io import output_file, show
+from bokeh.plotting import figure
+
+x = [1,2,3,4,5]
+y = [8,6,5,2,3]
+
+plot = figure()
+plot.line(x,y, line_width=2)
+plot.circle(x,y, fill_color='white', size=10)
+
+output_file('line.html')
+show(plot)
+
+# Patches
+- Useful to draw geographical regions like countries or states
+- Patches can draw multiple polygons by giving a list of patch code
+- Patches need more cooridates, i.e. each-patch requires multiple coordinates
+- i.e. list of lists of each x-coordinate and y-coordinate
+
+# Example 03
+plot.patches(xs, ys, fill_color=['red', 'blue', 'green'], line_color='white')
+output_file('patches.html')
+show(plot)
+
+#other glyphs
+annulus()
+annulus_wedge()
+wedge()
+
+rect()
+quar()
+vbar()
+hbar()
+
+image()
+image_rgba()
+image_url()
+
+patch()
+patches()
+
+line()
+multi_line()
+
+arc()
+quadratic()
+bezier()
+
