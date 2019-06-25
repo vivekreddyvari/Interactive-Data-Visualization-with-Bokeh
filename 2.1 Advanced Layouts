@@ -1,0 +1,37 @@
+Chapter 2.1 
+
+# Advanced Layouts :
+
+ - gridded 
+ - tabbed layouts
+ 
+# Gridplots
+# step1 Import GridPlots
+
+from bokeh.layout import gridplot
+# we pass list of list like one list to be displayed
+
+layout=gridplot([[None, p1], [p2, p3]], toolbar_location=None)
+output_file('nested.html')
+show(layout)
+
+All the length for the grid rows should be same in length
+to bill blank, use None 
+
+# Tabbed layouts
+
+1 panels must be made for each tab
+2 tabs must collected into tab object
+
+from bokeh.models.widgets import Tabs, Panel
+
+# create a panel with a title for each tab
+first = Panel(child=row(p1,p2), title='first')
+second = Panel(child=row(p3), title='second')
+
+# put the panels in a Tabs object
+tabs = Tabs(tabs=[first, second])
+output_file(tabbed.html)
+show(tabs)
+
+
