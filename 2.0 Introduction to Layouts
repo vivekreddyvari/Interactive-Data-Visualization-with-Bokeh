@@ -1,0 +1,36 @@
+2.0 Chapter 2
+
+# Introduction to Layouts
+# controls like sliders and menu
+
+# Arrange plots (and controls) visually on a page: 
+	row and columns
+	grid arrangements
+	tabbed layouts
+
+# rows of plots
+# example 01 (display three rows in horizontally)
+
+# step 1 : import layouts
+
+from bokeh.layouts import layout
+layout = row(p1, p2, p3)
+outputfile('row.html')
+show(layout)
+
+# Columns of plots
+
+from bokeh.layouts import column
+layout = column(p1,p2,p3)
+outputfile('column.html')
+show(layout)
+
+# Nested layouts (rows and columns can be nested)
+# Rows and columns can be nested for more sophisticated layouts
+
+from bokeh.layouts import row, columns
+layout = row(column(p1,p2), p3)
+output_file('nested.html')
+show(layout)
+
+	
