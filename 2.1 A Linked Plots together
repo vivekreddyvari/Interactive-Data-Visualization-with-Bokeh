@@ -1,0 +1,22 @@
+# Linking Plots Together
+
+ - Linked spanning, Linked brushing
+ - pan tools - box 
+ - pan or zoom (linked pannning)
+ - linked share a range
+
+# sharing the range
+
+p3.x_range = p2.x_range = p1.x_range
+p3.y_range = p2.y_range = p1.y_range
+
+# Linkage selections (brushing)
+ - share columns data source between different plots
+ 
+p1 = figure(title = 'petal Lenght vs sepal length')
+p1.circle('petal_length', 'sepal_length', color = 'blue', source = source)
+p2 = figure(title = 'petal Length vs sepal width')
+p2.circle('petal_length','sepal_width', color='green', source=source)
+p3 = figure(title = 'petal Length vs petal width')
+p3.circle('petal_length','petal_width', line_color='red',fill_color=None, source=source)
+
