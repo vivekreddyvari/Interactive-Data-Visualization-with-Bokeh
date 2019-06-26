@@ -1,0 +1,32 @@
+3.0 An Introduction to Bokeh Server
+
+# Bokeh to all power libraries to python
+
+connecting to live python code
+
+-  Basic App Outline
+
+Step1 : 
+
+from bokeh.io import curdoc
+# create plots and widgets
+ - plots and widgets 
+# add callbacks
+ - call backs are functions that run automatically with respect to an event (when update)
+ - real power
+# arrange plots and widgets in layouts
+
+finally
+curdoc().add_root(layout)
+
+# Running Bokeh Applications
+
+Run single module apps at the shell or Windows command prompt
+
+bokeh serve --show myapp.py
+
+# Directory serve --show myappdir
+
+bokeh serve --show myappdir
+
+
