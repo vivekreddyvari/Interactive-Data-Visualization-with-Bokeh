@@ -1,0 +1,32 @@
+# 2.3 Annotation and Guides
+
+# for better communication of data
+ - Help relate scale information to the viewer
+ - Axes, grids (default on most plots)
+# Visual encoding that are use
+ - guides or legends to be used
+# Drill down into details not visible in the plot
+ - Hover Tool tips
+
+# legends
+
+plot.circle('petal_length', 'sepal_length', size=10, source=source, color = {'field':'species', 'transform':mapper}, legend = 'species')
+plot.legend.location = 'top_left'
+
+# legend will create an unique values represented in the columns
+ e.g. vivek roja karunya are three different values in a column
+ legend will help to display vivek
+ 							 roja
+ 							 karunya on the map
+
+# Hover Tool tips
+from bokeh.models import HoverTool
+
+hover = HoverTool(tooltips = [('species name', '@species'),
+							 ('petal_length','@petal_length'),
+							 ('sepal_length','@sepal_length'),
+							 ])
+# values supplied in list of tuples will help show the values when you hover with pointer.							 
+
+plot = figure(tools=[hover, 'pan', 'wheel zoom'])
+
