@@ -1,0 +1,32 @@
+3.1 Consider Slider on plots
+
+# A slider Example
+
+from bokeh.io import curdoc
+from bokeh.layouts import column, row
+from bokeh.models import ColumnSourceData, Slider
+from bokeh.plotting import figure
+from numpy.random import random
+
+N = 300
+source = ColumnDataSource(data={'x': random(N), 'y': random(N)})
+
+# Create plots and Widgets
+plot = figure()
+plot.circle(x='x', y='y' source=source)
+
+slider = Slider(start=100, end=1000, value=N, step=10, title='Number of points')
+
+# call back 
+def callback(attr, old, new):
+
+N=slider.value
+source.data={'x': random(N), 'y': random(N)}
+slider.on_change('value', callback)
+# we call on_change(), method 
+
+# Arrange plots ad widgets in layout
+layout = column(slider, plot)
+
+curdoc().add_root(layout)
+
