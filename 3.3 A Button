@@ -1,0 +1,22 @@
+3.4 Buttons
+
+# Different types of buttons
+ -  Button Call backs
+
+import bokeh.model import Button
+button = Button(label='press me')
+
+def update():
+	# do something intersteing
+
+button.on_click(update)
+
+# Different callbacks and buttons
+
+from bokeh.model import CheckboxGroup, RadioGroup, Toggle
+
+toggle = Toggle(label='some on/off', button_type='success')
+checkbox = CheckboxGroup(labels=['foo', 'bar','baz'])
+radiogroup = RadioGroup(labels=['2000', '2010', '2020'])
+
+def callback(active)
