@@ -8,12 +8,12 @@ Remember, as with the figures you generated in previous chapters, you can intera
 # Perform necessary imports
 from bokeh.io import output_file, show
 from bokeh.plotting import figure
-from bokeh.plotting import HoverTool, ColumnDataSource
+from bokeh.models import HoverTool, ColumnDataSource
 
 # Make the ColumnDataSource: source
 source = ColumnDataSource(data ={
-    'x'       : fertility,
-    'y'       : life,
+    'x'       : data.fertility,
+    'y'       : data.life,
     'country' : data.loc[1970].Country,
 })
 
