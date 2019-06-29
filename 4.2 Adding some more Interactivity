@@ -1,0 +1,33 @@
+Adding more interactivity:
+
+ - Adding Hover tool
+ - Adding drop-down menus
+ 
+ From bokeh.model import HoverTool
+ 
+ hover = HoverTool(toolTips=[
+ 							('species Name', '@species')
+ 							('petal_length','@petal_length')
+ 							('sepal length','@sepal_length')
+ 					])
+ 
+ # include hover tool in the list of plot tools
+ 
+ plot = figure(tools=[hover, 'pan', 'wheel_zoom'])
+ Adding dropdown menus
+ 
+ from bokeh.models import select
+ 
+ # Define a callback taking attr, old, new
+ 
+ def callback(attr, old, new)
+ 	# update the plot here
+ 
+ # create a select widget
+ menu = Select(option=['foo','value','baz'], value='foo',title='A menu of options')
+ 
+ # add a callback to its values
+ menu.on_change('value', callback)
+ 
+ 
+ 	
