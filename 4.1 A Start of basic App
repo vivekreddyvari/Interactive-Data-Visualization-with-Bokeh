@@ -1,0 +1,24 @@
+4.1 Starting the App
+ - Adding just a plot
+ 
+ steps 
+ 1. Create Plots and widgets
+ 2. Add call backs
+ 3. Arrange plots, widgets in layouts 
+ 4. curdoc().add_root(layout)
+ 
+Adding a slider
+
+def update_plot(attr, old, new):
+	yr = slider.value
+	new_data = {
+				# update the data here
+				}
+	source.data  = new_data
+
+#create a slider
+slider = Slider(start = 1970, end = 2010, step=1, value=1970, title='year')
+
+# Add a callback to its values
+slider.on_change('value', update_plot)
+
